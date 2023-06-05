@@ -14,6 +14,10 @@ export default function Modal({ switchModal, user, largeImageURL }) {
     };
 
     window.addEventListener('keydown', handalKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handalKeyDown);
+    };
   }, [switchModal]);
 
   return createPortal(
